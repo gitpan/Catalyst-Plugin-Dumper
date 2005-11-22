@@ -1,0 +1,8 @@
+--- #YAML:1.0
+name: Catalyst-Plugin-Dumper
+version: v0.0.1
+author:
+  - Chisel Wright <pause@herlpacker.co.uk>
+abstract: Data::Dumper plugin for Catalyst
+license: perl
+generated_by: Module::Build version 0.2607, without YAML.pm
