@@ -1,5 +1,9 @@
 Revision history for Catalyst-Plugin-Dumper
 
+0.0.2  Mon Jan 16 11:57:04 GMT 2006
+    - changed version syntaxt away from qv() since CPAN and g-cpan don't seem happy
+    - fixed up Catalyst::Engine::Test test failure
+
 0.0.1  Tue Nov 22 17:49:18 2005
        Initial release.
 

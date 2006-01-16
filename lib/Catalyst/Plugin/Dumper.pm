@@ -1,6 +1,6 @@
 package Catalyst::Plugin::Dumper;
 
-use version; $VERSION = qv('0.0.1');
+our $VERSION = '0.000002';
 
 use warnings;
 use strict;

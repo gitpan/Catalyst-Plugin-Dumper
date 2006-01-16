@@ -3,7 +3,7 @@ package TestApp;
 use strict;
 use warnings;
 
-use Catalyst qw[-Engine=Test Dumper];
+use Catalyst qw[Dumper];
 __PACKAGE__->setup();
 
 
