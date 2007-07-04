@@ -1,6 +1,6 @@
 package Catalyst::Plugin::Dumper;
 
-our $VERSION = '0.000002';
+our $VERSION = '0.00_03';
 
 use warnings;
 use strict;
@@ -22,6 +22,22 @@ sub Catalyst::Log::dumper {
       $self->debug( Dumper($var) );
   }
 }
+
+# (contributed by James Kiser (pause: JKISER)
+# use $c->error method to generate pretty DD output
+sub dumper {
+    my ($self, $var, $label) = @_;
+
+    if (defined $label) {
+        # temporarily change the Varname that D::D uses
+        local $Data::Dumper::Varname = $label;
+        $self->error( Dumper($var) );
+    }
+    else {
+        $self->error( Dumper($var) );
+    }
+}
+
 
 1; # Magic true value required at end of module
 __END__
@@ -117,10 +133,14 @@ L<http://rt.cpan.org>.
 
 Chisel Wright  C<< <pause@herlpacker.co.uk> >>
 
+=head1 ADDITIONAL FUNCTIONALITY
+
+James Kiser C<< pause: JKISER >>
+
 
 =head1 LICENCE AND COPYRIGHT
 
-Copyright (c) 2005, Chisel Wright C<< <pause@herlpacker.co.uk> >>. All rights reserved.
+Copyright (c) 2005-2007, Chisel Wright C<< <pause@herlpacker.co.uk> >>. All rights reserved.
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.
