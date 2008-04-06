@@ -1,17 +1,13 @@
-use strict;
-use warnings;
-use ExtUtils::MakeMaker;
+# Load the Module::Install bundled in ./inc/
+use inc::Module::Install;
 
-WriteMakefile(
-    NAME                => 'Catalyst::Plugin::Dumper',
-    AUTHOR              => 'Chisel Wright <pause@herlpacker.co.uk>',
-    VERSION_FROM        => 'lib/Catalyst/Plugin/Dumper.pm',
-    ABSTRACT_FROM       => 'lib/Catalyst/Plugin/Dumper.pm',
-    PL_FILES            => {},
-    PREREQ_PM => {
-        'Test::More' => 0,
-        'version'    => 0,
-    },
-    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean               => { FILES => 'Catalyst-Plugin-Dumper-*' },
-);
+# Define metadata
+name            'Catalyst-Plugin-Dumper';
+all_from        'lib/Catalyst/Plugin/Dumper.pm';
+
+# Specific dependencies
+requires        'Data::Dumper';
+build_requires  'Test::More'        => '0.72';
+
+auto_install;
+WriteAll;

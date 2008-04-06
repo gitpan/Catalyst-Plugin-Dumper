@@ -1,9 +1,11 @@
 package Catalyst::Plugin::Dumper;
-
-our $VERSION = '0.00_03';
-
+# vim: ts=8 sts=4 et sw=4 sr sta
 use warnings;
 use strict;
+use 5.8.1;
+
+our $VERSION = '0.00003';
+
 use Carp;
 
 # Module implementation here
